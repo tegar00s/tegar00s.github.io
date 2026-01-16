@@ -1,170 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Tegar</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="HTML5 website template">
-  <meta name="keywords" content="global, template, html, sass, jquery">
-  <meta name="author" content="Bucky Maler">
-  <link rel="stylesheet" href="assets/css/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tegar — Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f6f4;
+      --fg: #111;
+      --muted: #777;
+      --accent: #000;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 4rem 2rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      margin-top: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    nav {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--fg);
+      border-bottom: 1px solid transparent;
+    }
+
+    nav a:hover {
+      border-color: var(--fg);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    article {
+      background: transparent;
+    }
+
+    article span {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    article h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin: 0.6rem 0;
+    }
+
+    article p {
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 4rem auto 2rem;
+      padding: 0 2rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- notification for small viewports and landscape oriented smartphones -->
-<div class="device-notification">
-  <a class="device-notification--logo" href="#0">
-    <img src="assets/img/logo.png" alt="Global">
-    <p>tegar00s</p>
-  </a>
-  <p class="device-notification--message">This page will good showed if you orient your device to portrait or find a larger screen. You won't be disappointed.</p>
-</div>
+  <header>
+    <h2>Tegar S. Hendrana</h2>
+    <p>Personal journal about Personal Project, Running Activity, and Essay. Written slowly.</p>
+    <nav>
+      <a href="#">Journal</a>
+      <a href="#">Projects</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
 
-<div class="perspective effect-rotate-left">
-  <div class="container"><div class="outer-nav--return"></div>
-    <div id="viewport" class="l-viewport">
-      <div class="l-wrapper">
-        <header class="header">
-          <a class="header--logo" href="#0">
-            <img src="assets/img/logo.png" alt="Global">
-            <p>tegar00s</p>
-          </a>
-          <div class="header--nav-toggle">
-            <span></span>
-          </div>
-        </header>
-        <nav class="l-side-nav">
-          <ul class="side-nav">
-            <li class="is-active"><span>Home</span></li>
-            <li><span>About</span></li>
-            <li><span>Portofoio</span></li>
-            <li><span>Contact</span></li>
-          </ul>
-        </nav>
-        <ul class="l-main-content main-content">
-          <li class="l-section section section--is-active">
-            <div class="intro">
-              <div class="intro--banner">
-                <h1>Welcome to<br>tegar00s<br>personal web.</h1>
-                <button class="cta">Contact me
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                  </g>
-                  </svg>
-                  <span class="btn-background"></span>
-                </button>
-                <img src="assets/img/introduction-visual.png" alt="Welcome">
-              </div>
-            </div>
-          </li>
+  <main>
+    <article>
+      <span>Project</span>
+      <p>Notes from ops payment and fraud systems. Stability is rarely loud.</p>
+    </article>
 
-          <li class="l-section section">
-            <div class="about">
-              <div class="about--banner">
-                <h2>About Me</h2>
-                <p>Hi 👋 <br>My Name is Tegar Sukma Hendrana<br>a fresh graduate and IT enthusiast<br>Now I'm in my first year as a Core Banking Operation on Digital Banking Development<br>and Operations division at one of the banking company<br>Here My qualifications:<br>▫️Python Programming for data<br>▫️SQL<br>▫️Linux System Administration<br>▫️Cloud Administration</p>
-                <a href="https://www.linkedin.com/in/tegarsukmah/">Career Track
-                  <span>
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                    </g>
-                    </svg>
-                  </span>
-                </a>
-                <img src="assets/img/about_me_1.PNG" width="545px" height="816px" alt="About Us">
-              </div>
-            </div>
-          </li>
+    <article>
+      <span>Running</span>
+      <p>For no particular reason, I just felt like running.</p>
+      <a href="https://strava.app.link/UaxoAJURYZb">Strava</a>
+    </article>
 
-          <li class="l-section section">
-            <div class="work">
-              <h2>Portofolio</h2>
-              <div class="work--lockup">
-                <ul class="slider">
-                  <li class="slider--item slider--item-left">
-                    <a href="https://github.com/tegar00s">
-                      <div class="slider--item-image">
-                        <img src="assets/img/github.png" alt="Victory">
-                      </div>
-                      <p class="slider--item-title">Github</p>
-                      <p class="slider--item-description">"Repositori source code."</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item-center">
-                    <a href="https://medium.com/@tegarshndrn">
-                      <div class="slider--item-image">
-                        <img src="assets/img/medium.jpg" alt="Metiew and Smith">
-                      </div>
-                      <p class="slider--item-title">Medium</p>
-                      <p class="slider--item-description">"Personal blog."</p>
-                    </a>
-                  </li>
-                  <li class="slider--item slider--item-right">
-                    <a href="https://garuda.kemdikbud.go.id/documents/detail/3093199">
-                      <div class="slider--item-image">
-                        <img src="assets/img/garba_1.jpg" alt="Alex Nowak">
-                      </div>
-                      <p class="slider--item-title">Jurnal Ilmiah</p>
-                      <p class="slider--item-description">"Karya Tulis."</p>
-                    </a>
-                  </li>
-                </ul>
-                <div class="slider--prev">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
-                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
-                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
-                  </g>
-                  </svg>
-                </div>
-                <div class="slider--next">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                  </g>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </li>
+    <article>
+      <span>Essay</span>
+      <p>This space is for writing anything, without obligation to be certain or complete.</p>
+      <a href="https://medium.com/@tegarshndrn">Medium</a>
+    </article>
+  </main>
 
-          <li class="l-section section">
-            <div class="contact">
-              <div class="contact--lockup">
-                <div class="modal">
-                  <div class="modal--information">
-                    <p>Jakarta, Indonesia</p>
-                  </div>
-                  <ul class="modal--options">
-                    <li><a href="mailto:ouremail@gmail.com">Email</a></li>
-                    <li><a href="#0">linkedin</a></li>
-                    <li><a href="#0">WhatsApp</a></li>
-
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
-
-        </ul>
-      </div>
+  <footer>
+    <div>© 2026 Tegar Sukma</div>
+    <div>
+      <a href="https://github.com/yourusername">GitHub</a> ·
+      <a href="https://linkedin.com">LinkedIn</a>
     </div>
-  </div>
-  <ul class="outer-nav">
-    <li class="is-active">Home</li>
-    <li>About</li>
-    <li>Portofolio</li>
-    <li>Contact</li>
-  </ul>
-</div>
+  </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
-<script src="assets/js/functions-min.js"></script>
 </body>
 </html>
