@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tegar — Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f6f4;
+      --fg: #111;
+      --muted: #777;
+      --accent: #000;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 4rem 2rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      margin-top: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    nav {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--fg);
+      border-bottom: 1px solid transparent;
+    }
+
+    nav a:hover {
+      border-color: var(--fg);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    article {
+      background: transparent;
+    }
+
+    article span {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    article h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin: 0.6rem 0;
+    }
+
+    article p {
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 4rem auto 2rem;
+      padding: 0 2rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Tegar S. Hendrana</h2>
+    <p>Personal journal about Personal Project, Running Activity, and Essay. Written slowly.</p>
+    <nav>
+      <a href="#">Journal</a>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <span>Code & Scriptt</span>
+      <p>Notes from ops payment and fraud systems. Stability is rarely loud.</p>
+      <a href="https://github.com/tegar00s">GitHub</a>
+    </article>
+
+    <article>
+      <span>Essay</span>
+      <p>This space is for writing anything, without obligation to be certain or complete.</p>
+      <a href="https://medium.com/@tegarshndrn">Medium</a>
+    </article>
+
+    <article>
+      <span>Running</span>
+      <p>For no particular reason, I just felt like running.</p>
+      <a href="https://strava.app.link/UaxoAJURYZb">Strava</a>
+    </article>
+
+  </main>
+
+  <footer>
+    <div>© 2026 Tegar Sukma</div>
+    <div>
+      <a href="https://github.com/yourusername">GitHub</a> ·
+      <a href="https://linkedin.com">LinkedIn</a>
+    </div>
+  </footer>
+
+</body>
+</html>

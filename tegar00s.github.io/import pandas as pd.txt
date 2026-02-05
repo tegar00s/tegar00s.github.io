@@ -1,0 +1,58 @@
+import pandas as pd
+import psycopg2
+from datetime import datetime, timedelta
+from calendar import monthrange
+
+# --- KONFIGURASI DATABASE ---
+DB_CONFIG = {
+    "host": "172.18.216.105",
+    "port": "5444",
+    "user": "BRICERPR",
+    "password": "tegar_ceriaops",
+    "database": "T3g4R_c3R140Ps2023!!~"
+}
+
+# --- KONEKSI DATABASE ---
+def get_connection():
+    return psycopg2.connect(**DB_CONFIG)
+
+# --- DAPATKAN TANGGAL TERAKHIR SETIAP BULAN DALAM RENTANG TAHUN TERTENTU ---
+def get_last_dates_of_months(year):
+    dates = []
+    for month in range(1, 13):
+        last_day = monthrange(year, month)[1]  # jumlah hari dalam bulan
+        last_date = datetime(year, month, last_day)
+        dates.append(last_date)
+    return dates
+
+# --- JALANKAN QUERY UNTUK SETIAP TANGGAL ---
+def fetch_data_for_date(conn, date):
+    query = f"""
+        SELECT foracid,sum(tran_date_bal) 
+        FROM tbaadm.eab a JOIN tbaadm.gam b ON a.acid=b.acid 
+        WHERE END_EOD_DATE >= '{date.date()}' AND EOD_DATE <= '{date.date()}' AND schm_type ='ODA' GROUP BY foracid;
+    """
+    return pd.read_sql(query, conn)
+
+# --- SIMPAN HASIL KE EXCEL (SHEET PER BULAN) ---
+def export_to_excel(year):
+    conn = get_connection()
+    dates = get_last_dates_of_months(year)
+    writer = pd.ExcelWriter(f"data_transaksi_{year}.xlsx", engine="openpyxl")
+
+    for date in dates:
+        df = fetch_data_for_date(conn, date)
+        sheet_name = date.strftime("%b")  # Nama sheet: Jan, Feb, Mar, ...
+        if df.empty:
+            print(f"Tidak ada data untuk {sheet_name}.")
+        else:
+            df.to_excel(writer, sheet_name=sheet_name, index=False)
+            print(f"Data untuk {sheet_name} berhasil ditulis.")
+
+    writer.close()
+    conn.close()
+    print("Selesai! File Excel berhasil dibuat.")
+
+# --- JALANKAN SCRIPT ---
+if __name__ == "__main__":
+    export_to_excel(2024)
